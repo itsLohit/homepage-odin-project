@@ -3,3 +3,236 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+:root {
+    --neon-color: #00ff9d;
+    --dark-bg: #0a0a0a;
+    --terminal-green: #00ff9d;
+    --code-blue: #61dafb;
+}
+
+body {
+  background-color: var(--dark-bg);
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 45rem;
+  background-color: var(--code-blue);
+  transform-origin: 0;
+  transform: skewY(-10deg);
+  box-shadow: 0rem 0.1rem 1rem var(--neon-color);
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem;
+  flex-wrap: wrap;
+}
+
+.home-card-container {
+  position: relative;
+  border-radius: 0.2rem;
+  box-shadow: 0rem 0.2rem 1rem #1d1d1d;
+  background-color: var(--code-blue);
+  transition: all 200ms ease-in-out;
+  border: solid var(--dark-bg) .15rem;
+  animation: float 4s ease-in-out infinite alternate;
+}
+
+.home-card-container:hover {
+  transform: scale(1.01);
+}
+
+.home-card-container img {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+
+.home-card-container h1 {
+  font-size: 3rem;
+  text-align: center;
+  bottom: 0;
+  font-weight: 300;
+}
+
+.about-me-container {
+  max-width: 50rem;
+  padding: 2rem;
+  color: white;
+  background-color: var(--dark-bg);
+  box-shadow: 0rem 0.1rem 1rem #1d1d1d;
+}
+
+.about-me-container h1 {
+  color: var(--terminal-green);
+  font-weight: 100;
+  font-size: 3rem;
+  padding-bottom: 2rem;
+}
+
+.about-me-container p {
+  font-size: 1.5rem;
+  font-weight: 100;
+}
+
+.home-footer {
+  display: flex;
+  justify-content: end;
+  gap: 1.5rem;
+  padding-top: 2.5rem;
+}
+
+svg {
+  height: 2rem;
+  transition: all 100ms ease-in-out;
+}
+
+.about-me-container svg path{
+  fill: white;
+}
+
+.about-me-container svg:hover path{
+  transition: all 100ms ease-in-out;
+  fill: var(--neon-color);
+}
+
+.my-work svg path {
+  fill: var(--neon-color);
+}
+
+svg:hover {
+  transform: scale(1.1);
+}
+
+.my-work {
+  padding: 5rem;
+  max-width: 100rem;
+  margin: auto;
+  color: white;
+}
+
+.my-work h1 {
+  font-weight: 100;
+  font-size: 3rem;
+  padding-bottom: 2rem;
+  color: var(--neon-color);
+}
+
+.my-work-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 5rem;
+}
+
+.card {
+  max-width: 25rem;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255,255,255,0.02);
+  border: 1px solid rgba(0,255,157,0.1);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  transition: all 250ms ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.01);
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0,255,157,0.1);
+  border-color: var(--terminal-green);
+}
+
+.card img {
+  max-width: 25rem;
+  padding-bottom: 1rem;
+  border-radius: 0.5rem;
+  filter: opacity(90%);
+  transition: filter 250ms ease-in-out;
+}
+
+.card:hover img {
+  filter: none;
+}
+
+.card p {
+  font-size: 1rem;
+}
+
+.card-title-link {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+}
+
+.my-work-footer {
+  display: flex;
+  gap: 1rem;
+}
+
+footer {
+  display: flex;
+  background-color: var(--code-blue);
+  padding: 5rem;
+  gap: 16rem;
+  flex-wrap: wrap;
+}
+
+footer img {
+  max-width: 30rem;
+  box-shadow: 0rem 0.5rem 1.5rem #1d1d1d;
+}
+
+footer h1 {
+  font-weight: 100;
+  font-size: 4rem;
+  padding-bottom: 2rem;
+}
+
+.contact-me-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 50rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.contact-me-container p {
+  font-size: 1.5rem;
+  font-weight: 100rem;
+  padding-bottom: 1rem;
+}
+
+.contact-me-container a {
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  text-decoration: none;
+  color: #000;
+}
+
+.contact-footer {
+  display: flex;
+  justify-content: start;
+  gap: 1rem;
+}
+
+
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    25% { 
+      transform: translateX(5px); 
+    }
+    50% { 
+      transform: translateY(-5px); 
+    }
+    75% { transform: translateX(5px); }
+    100% { transform: translateY(0px); }
+}
